@@ -17,24 +17,49 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 //Effettuiamo un clear della console
 console.clear()
 
-//Dichiariamo Le Variabili
 
+let input = parseInt(prompt('Inserisci la tua età'))
+console.log(input)
+let km = parseInt(prompt('Inserisci quanti Km vuoi percorrere'))
+console.log(km)
+
+//Dichiariamo Le Variabili
 console.log('Queste sono le Variabili:'); //Print su console delle variabili dichiarate
 
-const tariffaStandard = 0.21; //Costo Standard Biglietto
+const tariffaStandard = 0.21 * km; //Costo Standard Biglietto
 console.log(tariffaStandard); // Print Tariffa Standard
 
-const tariffaJunior = 20; 
-console.log(tariffaJunior);   // Print Tariffa Junior
+const scontoJunior = (0.21*20) / 100; 
+console.log(scontoJunior);   // Print Sconto Junior
 
-const tariffaSenior = 40; 
-console.log(tariffaSenior);   // Print Tariffa Senior
+const scontoSenior = (0.21*40) / 100; 
+console.log(scontoSenior);   // Print Sconto Senior
 
 const junior = 17;
 console.log(junior); // Print età Junior
 
 const senior = 65;
 console.log(senior); // Print età Senior
+
+let tariffaTotale; // Totale Tariffa Da Calcolare
+
+
+// Ragionamento Logico
+
+if (input <= junior ){
+    tariffaTotale = (tariffaStandard - scontoJunior)
+    console.log(tariffaTotale);
+} else if (input >= senior ){
+    tariffaTotale = (tariffaStandard - scontoSenior)
+    console.log(tariffaTotale);
+} else{
+    tariffaTotale = tariffaStandard * km
+    console.log(tariffaTotale);
+}
+
+
+
+
 
 
 
