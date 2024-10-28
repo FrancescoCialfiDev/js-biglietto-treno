@@ -18,8 +18,8 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 console.clear();
 
 
-let input = parseInt(prompt('Inserisci la tua età'));
-console.log(input);
+let inputAge = parseInt(prompt('Inserisci la tua età'));
+console.log(inputAge);
 let km = parseInt(prompt('Inserisci quanti Km vuoi percorrere'));
 console.log(km);
 
@@ -29,10 +29,10 @@ console.log('Queste sono le Variabili:'); //Print su console delle variabili dic
 const tariffaStandard = 0.21 * km; //Costo Standard Biglietto
 console.log(tariffaStandard); // Print Tariffa Standard
 
-const scontoJunior = (0.21*20) / 100; 
+const scontoJunior = (tariffaStandard * 20) / 100; 
 console.log(scontoJunior);   // Print Sconto Junior
 
-const scontoSenior = (0.21*40) / 100; 
+const scontoSenior = (tariffaStandard * 40) / 100; 
 console.log(scontoSenior);   // Print Sconto Senior
 
 const junior = 17;
@@ -46,14 +46,19 @@ let tariffaTotale; // Totale Tariffa Da Calcolare
 
 // Ragionamento Logico
 
-if (input <= junior ){                                     // Se l'età è minore uguale a 17 viene applicato sconto Junior
+// Se l'età è minore uguale a 17 viene applicato sconto Junior
+if (inputAge <= junior ){                                     
     tariffaTotale = (tariffaStandard - scontoJunior);
     console.log(`Il totale da pagare è: ${tariffaTotale.toFixed(2)} €`);
-} else if (input >= senior ){
-    tariffaTotale = (tariffaStandard - scontoSenior);      // Se l'età è minore uguale a 17 viene applicato sconto Senior
+} 
+// Se l'età è minore uguale a 17 viene applicato sconto Senior
+else if (inputAge >= senior ){
+    tariffaTotale = (tariffaStandard - scontoSenior);      
     console.log(`Il totale da pagare è: ${tariffaTotale.toFixed(2)} €`);
-} else {
-    tariffaTotale = (tariffaStandard);                // Altrimenti si applica la tariffa standard
+}
+// Altrimenti si applica la tariffa standard
+else {
+    tariffaTotale = (tariffaStandard);                
     console.log(`Il totale da pagare è: ${tariffaTotale.toFixed(2)} €`);
 }
 
