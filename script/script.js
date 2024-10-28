@@ -46,12 +46,12 @@ let tariffaTotale; // Totale Tariffa Da Calcolare
 
 // Ragionamento Logico
 
-// Se l'età è minore uguale a 17 viene applicato sconto Junior
+// Se l'età è minore o uguale a 17 viene applicato sconto Junior
 if (inputAge <= junior ){                                     
     tariffaTotale = (tariffaStandard - scontoJunior);
     console.log(`Il totale da pagare è: ${tariffaTotale.toFixed(2)} €`);
 } 
-// Se l'età è minore uguale a 17 viene applicato sconto Senior
+// Se l'età è maggiore o uguale a 65 viene applicato sconto Senior
 else if (inputAge >= senior ){
     tariffaTotale = (tariffaStandard - scontoSenior);      
     console.log(`Il totale da pagare è: ${tariffaTotale.toFixed(2)} €`);
